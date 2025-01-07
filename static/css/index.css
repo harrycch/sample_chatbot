@@ -1,0 +1,96 @@
+body, html {
+    height: 100%;
+    background-color: #e5ddd5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#chat-box {
+    height: calc(100vh - 200px); /* Adjust height to leave room for the input box and header */
+    overflow-y: scroll;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments for chat-box height */
+@media (max-width: 768px) {
+    #chat-box {
+        height: calc(100vh - 250px);
+    }
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    display: block;
+}
+
+.chat-message.bot {
+    background: #dcf8c6;
+    text-align: left;
+    float: left;
+    clear: both;
+}
+
+.chat-message.user {
+    background: #ffffff;
+    text-align: right;
+    float: right;
+    clear: both;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    background-color: #075e54;
+    color: white;
+}
+
+.navbar .navbar-brand {
+    color: rgba(0,0,0,.9);
+}
+
+.navbar .nav-link, .navbar .btn {
+    color: white;
+    margin-left: 10px;
+}
+
+body {
+    background-color: #e5ddd5;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+.input-group .form-control {
+    border-radius: 20px;
+    resize: none; /* Disable resizing by the user */
+    overflow-y: hidden; /* Hide the scrollbar */
+}
+
+.input-group-append .btn {
+    border-radius: 20px;
+    background-color: #075e54;
+    border-color: #075e54;
+}
+
+.input-group-append .btn:hover {
+    background-color: #0b7a66;
+    border-color: #0b7a66;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}
