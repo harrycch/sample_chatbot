@@ -6,13 +6,16 @@ function sendMessage() {
 
     $('#chat-box').append('<div class="chat-message user">' + userMessage.replace(/\n/g, '<br>') + '</div>');
     $('#user-message').val('').css('height', 'auto'); // Reset height after sending
+    $('#user-message').prop('disabled', true);
 
     // Show the loading spinner in the chat box wrapped in a bot message div
-    $('#chat-box').append('<div id="loading-spinner" class="chat-message bot"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div></div>');
+//    $('#chat-box').append('<div id="loading-spinner" class="chat-message bot"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div></div>');
+    $('#chat-box').append('<div id="loading-spinner" class="chat-message bot loading">Loading...</div>');
     $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
 
     $.post('/get_response', { message: userMessage }, function(data) {
         $('#loading-spinner').remove(); // Remove the loading spinner
+        $('#user-message').prop('disabled', false);
         $('#chat-box').append('<div class="chat-message bot">' + data.response.replace(/\n/g, '<br>') + '</div>');
         $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
     }, 'json');

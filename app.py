@@ -1,3 +1,4 @@
+import random
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session
 import time
 
@@ -37,7 +38,7 @@ def chat():
 def get_response():
     user_message = request.form['message']
     # Simulate processing time
-    time.sleep(2)
+    time.sleep(random.randint(2, 10))
     # Dummy response logic
     bot_response = f"Bot response to: {user_message}"
     return jsonify(response=bot_response)

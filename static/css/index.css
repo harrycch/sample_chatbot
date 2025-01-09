@@ -41,6 +41,10 @@ body, html {
     clear: both;
 }
 
+.chat-message.bot.loading {
+    opacity: 50%;
+}
+
 .navbar {
     margin-bottom: 20px;
     background-color: #075e54;
@@ -52,7 +56,6 @@ body, html {
 }
 
 .navbar .nav-link, .navbar .btn {
-    color: white;
     margin-left: 10px;
 }
 
@@ -75,6 +78,10 @@ body {
     border-radius: 20px;
     resize: none; /* Disable resizing by the user */
     overflow-y: hidden; /* Hide the scrollbar */
+    border-color: #075e54;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .input-group-append .btn {
